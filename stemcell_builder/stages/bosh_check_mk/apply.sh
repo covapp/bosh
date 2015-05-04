@@ -7,7 +7,7 @@ base_dir=$(readlink -nf $(dirname $0)/../..)
 source $base_dir/lib/prelude_apply.bash
 source $base_dir/lib/prelude_bosh.bash
 
-cd $assets_dir/check-mk
+cd $assets_dir
 
 # Download and install inet using package manager
 pkg_mgr install xinetd
