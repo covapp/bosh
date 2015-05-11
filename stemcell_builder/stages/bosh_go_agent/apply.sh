@@ -22,8 +22,10 @@ ln -s /etc/sv/monit /etc/service/monit
 # Alerts for monit config
 cp -a $dir/assets/alerts.monitrc $chroot/var/vcap/monit/alerts.monitrc
 
-cd $assets_dir/go/src/github.com/cloudfoundry/bosh-agent
-
+#cd $assets_dir/go/src/github.com/cloudfoundry/bosh-agent
+curl -L -o bosh-agent.tar.gz https://www.dropbox.com/s/3mo96zi9nyoisca/bosh-agent.tgz
+tar -xzf bosh-agent.tar.gz
+cd bosh-agent/
 bin/build
 
 mv out/bosh-agent $chroot/var/vcap/bosh/bin/
